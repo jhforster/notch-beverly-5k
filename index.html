@@ -5,8 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="A neighborhood meetup before and after the 2026 Run for the Beach 5K in Beverly, MA."
+      content="Meet at 8:00 AM at 9 Columbus Ave for the Run for the Beach 5K, then come back for breakfast, coffee, and beer."
     />
+    <link rel="canonical" href="https://jhforster.me/notch-beverly-5k/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jhforster.me/notch-beverly-5k/" />
+    <meta property="og:site_name" content="Notch Run Club" />
+    <meta property="og:title" content="Start Here. Finish Here. | Notch Run Club" />
+    <meta
+      property="og:description"
+      content="Meet at 8:00 AM at 9 Columbus Ave for the Run for the Beach 5K, then come back for breakfast, coffee, and beer."
+    />
+    <meta property="og:image" content="https://jhforster.me/notch-beverly-5k/share-card.png" />
+    <meta property="og:image:secure_url" content="https://jhforster.me/notch-beverly-5k/share-card.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Notch Run Club: Start Here. Finish Here." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Start Here. Finish Here. | Notch Run Club" />
+    <meta
+      name="twitter:description"
+      content="Meet at 8:00 AM at 9 Columbus Ave for the Run for the Beach 5K."
+    />
+    <meta name="twitter:image" content="https://jhforster.me/notch-beverly-5k/share-card.png" />
+    <meta name="twitter:image:alt" content="Notch Run Club: Start Here. Finish Here." />
     <title>Start Here. Finish Here. | Notch Run Club</title>
     <style>
       :root {
@@ -573,6 +596,22 @@
           padding-bottom: 190px;
         }
 
+        .hero h1 {
+          max-width: none;
+          margin: 76px 0 44px;
+          font-size: clamp(4rem, 7vw, 5.7rem);
+          white-space: nowrap;
+        }
+
+        .hero h1 span {
+          display: inline;
+          margin: 0 0 0 0.12em;
+        }
+
+        .hero-grid {
+          padding-top: 0;
+        }
+
         main {
           padding: 76px 0 64px;
         }
@@ -594,7 +633,11 @@
 
         .hero-grid {
           gap: 42px;
-          padding-top: 52px;
+          padding-top: 0;
+        }
+
+        .hero h1 {
+          margin-top: 52px;
         }
 
         .date-card {
@@ -655,8 +698,8 @@
           text-align: center;
         }
 
-        .hero-grid {
-          padding-top: 44px;
+        .hero h1 {
+          margin-top: 44px;
         }
 
         h1 {
@@ -775,9 +818,10 @@
           </a>
         </div>
 
+        <h1>Start here. <span>Finish here.</span></h1>
+
         <div class="hero-grid">
           <div>
-            <h1>Start here. <span>Finish here.</span></h1>
             <a
               class="hero-location"
               href="https://www.google.com/maps/search/?api=1&query=9+Columbus+Ave,+Beverly,+MA"
