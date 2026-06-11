@@ -367,9 +367,12 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 18px;
+        align-items: stretch;
       }
 
       .plan-card {
+        display: flex;
+        flex-direction: column;
         min-height: 250px;
         padding: 24px 22px;
         background: var(--paper);
@@ -378,18 +381,15 @@
 
       .plan-card:nth-child(2) {
         background: var(--notch-gray);
-        transform: translateY(16px) rotate(1deg);
       }
 
       .plan-card:nth-child(3) {
         background: var(--notch);
         color: white;
-        transform: rotate(-1deg);
       }
 
       .plan-card:nth-child(4) {
         background: var(--sun);
-        transform: translateY(16px);
       }
 
       .plan-time {
@@ -402,7 +402,7 @@
       }
 
       .plan-card h3 {
-        margin-bottom: 12px;
+        margin: 0 0 12px;
         font-family: Georgia, "Times New Roman", serif;
         font-size: 2rem;
         font-style: italic;
