@@ -294,6 +294,74 @@
         text-wrap: balance;
       }
 
+      .meetup {
+        display: grid;
+        grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.28fr);
+        gap: 42px;
+        align-items: center;
+        padding: 40px;
+        background: var(--notch);
+        border: 3px solid var(--notch-dark);
+        box-shadow: var(--shadow);
+        color: white;
+      }
+
+      .meetup .eyebrow::before {
+        color: var(--sun);
+      }
+
+      .meetup h2 {
+        margin: 12px 0 18px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(3rem, 6vw, 5.4rem);
+        font-style: italic;
+        font-weight: 900;
+      }
+
+      .meetup-address {
+        display: block;
+        margin-bottom: 14px;
+        color: var(--sun);
+        font-family: "Arial Black", Impact, ui-sans-serif, system-ui, sans-serif;
+        font-size: clamp(1.8rem, 4vw, 3.2rem);
+        font-weight: 950;
+        letter-spacing: -0.04em;
+        line-height: 1;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      .meetup p {
+        margin-bottom: 0;
+        font-weight: 650;
+      }
+
+      .meetup-map {
+        margin: 0;
+        padding: 9px 9px 38px;
+        background: white;
+        border: 3px solid var(--notch-dark);
+        box-shadow: 8px 8px 0 var(--sun);
+        transform: rotate(1deg);
+      }
+
+      .meetup-map img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1.024 / 1;
+        object-fit: cover;
+      }
+
+      .meetup-map figcaption {
+        margin-top: 10px;
+        color: var(--ink);
+        font-size: 0.76rem;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
       .plan-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -376,6 +444,12 @@
         background: var(--sun);
         border-color: var(--sun);
         color: var(--ink);
+      }
+
+      .button.light {
+        background: white;
+        border-color: white;
+        color: var(--notch-dark);
       }
 
       .button:hover,
@@ -496,6 +570,10 @@
           grid-template-columns: repeat(2, 1fr);
         }
 
+        .meetup {
+          grid-template-columns: 1fr;
+        }
+
         .details-grid {
           grid-template-columns: 1fr;
         }
@@ -595,6 +673,18 @@
           gap: 12px;
         }
 
+        .meetup {
+          gap: 28px;
+          padding: 24px 20px;
+          box-shadow: 6px 6px 0 var(--notch-dark);
+        }
+
+        .meetup-map {
+          padding: 6px 6px 34px;
+          box-shadow: 5px 5px 0 var(--sun);
+          transform: none;
+        }
+
         .plan-card {
           min-height: auto;
           padding: 20px;
@@ -676,9 +766,53 @@
     </div>
 
     <main>
+      <section class="section shell" aria-labelledby="meetup-title">
+        <div class="meetup">
+          <div>
+            <p class="eyebrow">Meet at 8:00 AM</p>
+            <h2 id="meetup-title">Meet + park here.</h2>
+            <a
+              class="meetup-address"
+              href="https://www.google.com/maps/search/?api=1&query=9+Columbus+Ave,+Beverly,+MA"
+              target="_blank"
+              rel="noreferrer"
+            >
+              9 Columbus Ave<br />Beverly, MA
+            </a>
+            <p>We have space in the driveway, and street parking is plentiful.</p>
+            <div class="button-row">
+              <a
+                class="button light"
+                href="https://www.google.com/maps/search/?api=1&query=9+Columbus+Ave,+Beverly,+MA"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Open address ↗
+              </a>
+              <a
+                class="button"
+                href="https://www.google.com/maps/dir/?api=1&origin=9+Columbus+Ave,+Beverly,+MA&destination=Dane+Street+Beach,+Beverly,+MA&travelmode=walking"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Route to the start ↗
+              </a>
+            </div>
+          </div>
+
+          <figure class="meetup-map">
+            <img
+              src="route-map.png"
+              alt="Map showing the route between 9 Columbus Avenue and Dane Street Beach"
+            />
+            <figcaption>About 1 mile from home base to the start</figcaption>
+          </figure>
+        </div>
+      </section>
+
       <section class="section shell" aria-labelledby="plan-title">
         <p class="eyebrow">The game plan</p>
-        <h2 class="section-title" id="plan-title">One easy Sunday morning.</h2>
+        <h2 class="section-title" id="plan-title">Here’s the plan.</h2>
 
         <div class="plan-grid">
           <article class="plan-card">
