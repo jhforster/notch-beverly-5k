@@ -196,6 +196,28 @@
         color: var(--sun);
       }
 
+      .hero-location {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0 0 22px;
+        padding: 9px 13px;
+        background: var(--sun);
+        border: 2px solid white;
+        color: var(--notch-dark);
+        font-size: 0.76rem;
+        font-weight: 950;
+        letter-spacing: 0.08em;
+        line-height: 1.2;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      .hero-location strong {
+        padding-right: 10px;
+        border-right: 2px solid var(--notch-dark);
+      }
+
       .intro {
         max-width: 660px;
         margin: 0;
@@ -646,6 +668,17 @@
           font-size: 1.02rem;
         }
 
+        .hero-location {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 5px;
+        }
+
+        .hero-location strong {
+          padding: 0;
+          border: 0;
+        }
+
         .date-card {
           width: calc(100% - 10px);
           padding: 22px;
@@ -746,6 +779,15 @@
         <div class="hero-grid">
           <div>
             <h1>Start here. <span>Finish here.</span></h1>
+            <a
+              class="hero-location"
+              href="https://www.google.com/maps/search/?api=1&query=9+Columbus+Ave,+Beverly,+MA"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <strong>Here =</strong>
+              <span>9 Columbus Ave, Beverly ↗</span>
+            </a>
             <p class="intro">
               Park here, jog to the start with friends, run the Salem Sound Coastwatch 5K,
               then cool down back to our place for breakfast, coffee, and a beer.
