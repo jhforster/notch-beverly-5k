@@ -1,0 +1,756 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A neighborhood meetup before and after the 2026 Run for the Beach 5K in Beverly, MA."
+    />
+    <title>Start Here. Finish Here. | Notch Run Club</title>
+    <style>
+      :root {
+        --ink: #102942;
+        --notch: #702733;
+        --notch-dark: #4b1720;
+        --notch-gray: #eeeeec;
+        --cream: #fff8e7;
+        --paper: #fffdf7;
+        --sun: #ffc844;
+        --coral: #702733;
+        --sea: #15a6a3;
+        --sky: #bceaf1;
+        --line: rgba(16, 41, 66, 0.18);
+        --shadow: 8px 8px 0 var(--notch-dark);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 13% 7%, rgba(255, 200, 68, 0.65) 0 6rem, transparent 6.1rem),
+          linear-gradient(var(--cream), var(--cream));
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        line-height: 1.5;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .shell {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin: 0;
+        font-size: 0.78rem;
+        font-weight: 900;
+        letter-spacing: 0.14em;
+        line-height: 1.2;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        content: "★";
+        color: var(--notch);
+        font-size: 0.9rem;
+      }
+
+      .hero .eyebrow::before {
+        color: var(--sun);
+      }
+
+      .hero {
+        position: relative;
+        min-height: 680px;
+        padding: 28px 0 108px;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.05) 0 2px, transparent 2.5px),
+          radial-gradient(circle at 78% 64%, rgba(0, 0, 0, 0.08) 0 1.5px, transparent 2px),
+          linear-gradient(115deg, rgba(112, 39, 51, 0.98), rgba(75, 23, 32, 0.96)),
+          var(--notch);
+        background-size: 19px 23px, 13px 17px, auto, auto;
+        color: white;
+        isolation: isolate;
+      }
+
+      .hero::before,
+      .hero::after {
+        position: absolute;
+        right: -10%;
+        bottom: -88px;
+        left: -10%;
+        z-index: -1;
+        height: 180px;
+        content: "";
+        background: var(--cream);
+        border-radius: 50% 50% 0 0 / 30% 30% 0 0;
+        transform: rotate(-2deg);
+      }
+
+      .hero::after {
+        bottom: -54px;
+        z-index: -2;
+        background: var(--notch-gray);
+        transform: rotate(3deg);
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .notch-lockup {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        color: white;
+        font-size: 0.68rem;
+        font-weight: 900;
+        letter-spacing: 0.16em;
+        line-height: 1.25;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      .notch-lockup img {
+        display: block;
+        width: 116px;
+        height: auto;
+      }
+
+      .notch-lockup span {
+        max-width: 80px;
+        padding-left: 14px;
+        border-left: 2px solid rgba(255, 255, 255, 0.6);
+      }
+
+      .mini-link {
+        padding: 9px 14px;
+        border: 2px solid white;
+        border-radius: 999px;
+        font-size: 0.72rem;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.6fr);
+        gap: 52px;
+        align-items: end;
+        padding-top: 68px;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1,
+      h2,
+      h3 {
+        letter-spacing: -0.045em;
+        line-height: 0.95;
+      }
+
+      h1 {
+        max-width: 760px;
+        margin-bottom: 24px;
+        font-family: "Arial Black", Impact, ui-sans-serif, system-ui, sans-serif;
+        font-size: clamp(4rem, 10vw, 8.8rem);
+        font-style: normal;
+        font-weight: 950;
+        letter-spacing: -0.075em;
+        line-height: 0.84;
+        text-transform: uppercase;
+        text-wrap: balance;
+      }
+
+      h1 span {
+        display: block;
+        margin-top: 0.08em;
+        margin-left: 0;
+        color: var(--sun);
+      }
+
+      .intro {
+        max-width: 660px;
+        margin: 0;
+        font-size: clamp(1.08rem, 2vw, 1.42rem);
+        font-weight: 650;
+        text-wrap: pretty;
+      }
+
+      .date-card {
+        padding: 26px;
+        background: var(--paper);
+        border: 3px solid var(--ink);
+        color: var(--ink);
+        box-shadow: var(--shadow);
+        transform: rotate(2deg);
+      }
+
+      .date-card .day {
+        display: block;
+        color: var(--coral);
+        font-size: 1rem;
+        font-weight: 950;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .date-card .date {
+        display: block;
+        margin: 8px 0 18px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(3.4rem, 7vw, 5.4rem);
+        font-style: italic;
+        font-weight: 900;
+        letter-spacing: -0.08em;
+        line-height: 0.82;
+      }
+
+      .date-card p {
+        margin-bottom: 0;
+        font-weight: 800;
+      }
+
+      .quick-strip {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: -72px;
+        background: var(--notch-gray);
+        border: 3px solid var(--notch-dark);
+        box-shadow: var(--shadow);
+      }
+
+      .quick-item {
+        padding: 24px;
+      }
+
+      .quick-item + .quick-item {
+        border-left: 3px solid var(--notch-dark);
+      }
+
+      .quick-label {
+        display: block;
+        margin-bottom: 4px;
+        font-size: 0.72rem;
+        font-weight: 950;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--notch);
+      }
+
+      .quick-value {
+        display: block;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.3rem, 2.5vw, 2rem);
+        font-style: italic;
+        font-weight: 900;
+        line-height: 1.1;
+      }
+
+      main {
+        padding: 58px 0 44px;
+      }
+
+      .section {
+        padding: 40px 0;
+      }
+
+      .section-title {
+        max-width: 700px;
+        margin: 12px 0 40px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(3rem, 7vw, 5.8rem);
+        font-style: italic;
+        font-weight: 900;
+        text-wrap: balance;
+      }
+
+      .plan-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+      }
+
+      .plan-card {
+        min-height: 250px;
+        padding: 24px 22px;
+        background: var(--paper);
+        border: 3px solid var(--ink);
+      }
+
+      .plan-card:nth-child(2) {
+        background: var(--notch-gray);
+        transform: translateY(16px) rotate(1deg);
+      }
+
+      .plan-card:nth-child(3) {
+        background: var(--notch);
+        color: white;
+        transform: rotate(-1deg);
+      }
+
+      .plan-card:nth-child(4) {
+        background: var(--sun);
+        transform: translateY(16px);
+      }
+
+      .plan-time {
+        display: block;
+        margin-bottom: 30px;
+        font-size: 0.78rem;
+        font-weight: 950;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+      }
+
+      .plan-card h3 {
+        margin-bottom: 12px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 2rem;
+        font-style: italic;
+        font-weight: 900;
+      }
+
+      .plan-card p {
+        margin-bottom: 0;
+        font-size: 0.95rem;
+        font-weight: 650;
+      }
+
+      .button-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 28px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 12px 18px;
+        border: 2px solid white;
+        border-radius: 999px;
+        font-size: 0.76rem;
+        font-weight: 950;
+        letter-spacing: 0.08em;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition:
+          transform 160ms ease,
+          background 160ms ease,
+          color 160ms ease;
+      }
+
+      .button.primary {
+        background: var(--sun);
+        border-color: var(--sun);
+        color: var(--ink);
+      }
+
+      .button:hover,
+      .button:focus-visible {
+        transform: translateY(-2px);
+      }
+
+      .details-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+
+      .detail {
+        padding: 28px;
+        border-top: 4px solid var(--notch);
+      }
+
+      .detail-number {
+        display: inline-grid;
+        width: 42px;
+        height: 42px;
+        margin-bottom: 26px;
+        place-items: center;
+        background: var(--notch);
+        border-radius: 50%;
+        color: white;
+        font-family: Georgia, "Times New Roman", serif;
+        font-style: italic;
+        font-weight: 900;
+      }
+
+      .detail h3 {
+        margin-bottom: 12px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 2rem;
+        font-style: italic;
+        font-weight: 900;
+      }
+
+      .detail p {
+        margin-bottom: 0;
+        font-weight: 600;
+      }
+
+      .invite {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 32px;
+        align-items: center;
+        margin-top: 34px;
+        padding: 40px;
+        background: var(--notch);
+        border: 3px solid var(--notch-dark);
+        box-shadow: var(--shadow);
+        color: white;
+      }
+
+      .invite h2 {
+        margin-bottom: 10px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(3rem, 6vw, 5rem);
+        font-style: italic;
+        font-weight: 900;
+      }
+
+      .invite p {
+        margin-bottom: 0;
+        font-weight: 700;
+      }
+
+      .invite .button {
+        justify-self: end;
+        background: var(--paper);
+        border-color: var(--ink);
+        color: var(--ink);
+      }
+
+      footer {
+        padding: 20px 0 34px;
+        font-size: 0.8rem;
+        font-weight: 750;
+        text-align: center;
+      }
+
+      footer a {
+        text-underline-offset: 3px;
+      }
+
+      .club-credit {
+        color: var(--notch);
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      @media (max-width: 900px) {
+        .hero {
+          min-height: auto;
+          padding-bottom: 128px;
+        }
+
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-grid {
+          gap: 42px;
+          padding-top: 52px;
+        }
+
+        .date-card {
+          max-width: 360px;
+        }
+
+        .plan-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .details-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .detail {
+          display: grid;
+          grid-template-columns: auto 1fr;
+          gap: 0 20px;
+        }
+
+        .detail-number {
+          grid-row: span 2;
+          margin: 0;
+        }
+
+        .invite {
+          grid-template-columns: 1fr;
+        }
+
+        .invite .button {
+          justify-self: start;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .shell {
+          width: min(100% - 24px, 1120px);
+        }
+
+        .topbar {
+          align-items: flex-start;
+        }
+
+        .notch-lockup img {
+          width: 88px;
+        }
+
+        .notch-lockup span {
+          display: none;
+        }
+
+        .mini-link {
+          max-width: 140px;
+          text-align: center;
+        }
+
+        .hero-grid {
+          padding-top: 44px;
+        }
+
+        h1 {
+          font-size: clamp(3.9rem, 19vw, 6.3rem);
+        }
+
+        .intro {
+          font-size: 1.02rem;
+        }
+
+        .date-card {
+          width: calc(100% - 10px);
+          padding: 22px;
+          transform: rotate(1deg);
+        }
+
+        .quick-strip {
+          grid-template-columns: 1fr;
+          margin-top: -78px;
+        }
+
+        .quick-item {
+          display: grid;
+          grid-template-columns: 92px 1fr;
+          gap: 12px;
+          align-items: baseline;
+          padding: 16px 18px;
+        }
+
+        .quick-item + .quick-item {
+          border-top: 3px solid var(--notch-dark);
+          border-left: 0;
+        }
+
+        main {
+          padding-top: 40px;
+        }
+
+        .section {
+          padding: 32px 0;
+        }
+
+        .section-title {
+          margin-bottom: 28px;
+        }
+
+        .plan-grid {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+
+        .plan-card {
+          min-height: auto;
+          padding: 20px;
+          transform: none !important;
+        }
+
+        .plan-time {
+          margin-bottom: 16px;
+        }
+
+        .button-row {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .detail {
+          padding: 22px 4px;
+        }
+
+        .invite {
+          margin-top: 24px;
+          padding: 26px 22px;
+          box-shadow: 6px 6px 0 var(--ink);
+        }
+
+        .invite .button {
+          justify-self: stretch;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="shell">
+        <div class="topbar">
+          <a class="notch-lockup" href="https://metersforliters.com/" target="_blank" rel="noreferrer">
+            <img src="notch-logo-white.png" alt="Notch" />
+            <span>Run Club</span>
+          </a>
+          <a class="mini-link" href="https://salemsound.org/5krace/" target="_blank" rel="noreferrer">
+            Official race page ↗
+          </a>
+        </div>
+
+        <div class="hero-grid">
+          <div>
+            <h1>Start here. <span>Finish here.</span></h1>
+            <p class="intro">
+              Park here, jog to the start with friends, run the Salem Sound Coastwatch 5K,
+              then cool down back to our place for breakfast, coffee, and a beer.
+              Kids, partners, and cheering squads are very welcome.
+            </p>
+          </div>
+
+          <aside class="date-card" aria-label="Event date and time">
+            <span class="day">Sunday</span>
+            <span class="date">June 14</span>
+            <p>Meet at 8:00 AM<br />9 Columbus Ave, Beverly</p>
+          </aside>
+        </div>
+      </div>
+    </header>
+
+    <div class="shell">
+      <section class="quick-strip" aria-label="Quick event details">
+        <div class="quick-item">
+          <span class="quick-label">Race start</span>
+          <span class="quick-value">9:00 AM</span>
+        </div>
+        <div class="quick-item">
+          <span class="quick-label">Warm-up jog</span>
+          <span class="quick-value">1 mile</span>
+        </div>
+        <div class="quick-item">
+          <span class="quick-label">Forecast</span>
+          <span class="quick-value">Good vibes, rain or shine</span>
+        </div>
+      </section>
+    </div>
+
+    <main>
+      <section class="section shell" aria-labelledby="plan-title">
+        <p class="eyebrow">The game plan</p>
+        <h2 class="section-title" id="plan-title">One easy Sunday morning.</h2>
+
+        <div class="plan-grid">
+          <article class="plan-card">
+            <span class="plan-time">8:00 AM</span>
+            <h3>Park + gather</h3>
+            <p>Park at our place or on Columbus Ave. We will have coffee and a spot to leave your stuff.</p>
+          </article>
+          <article class="plan-card">
+            <span class="plan-time">8:15 AM</span>
+            <h3>Jog over</h3>
+            <p>An easy 1-mile warm-up to Dane Street Beach, with plenty of time before the 9:00 AM start.</p>
+          </article>
+          <article class="plan-card">
+            <span class="plan-time">9:00 AM</span>
+            <h3>Run the 5K</h3>
+            <p>Go out fast, pick up in the middle, and kick at the finish.</p>
+          </article>
+          <article class="plan-card">
+            <span class="plan-time">Afterward</span>
+            <h3>Come on back</h3>
+            <p>Cool down to Columbus Ave, then hang out over breakfast snacks, coffee, and beer.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section shell" aria-labelledby="details-title">
+        <p class="eyebrow">Good to know</p>
+        <h2 class="section-title" id="details-title">Bring your people.</h2>
+
+        <div class="details-grid">
+          <article class="detail">
+            <span class="detail-number">1</span>
+            <h3>Parking</h3>
+            <p>
+              We have space in the driveway, and street parking is plentiful.
+            </p>
+          </article>
+          <article class="detail">
+            <span class="detail-number">2</span>
+            <h3>Kids welcome</h3>
+            <p>
+              I’ll be staying at home with our three kids and can watch other kids during the race.
+            </p>
+          </article>
+          <article class="detail">
+            <span class="detail-number">3</span>
+            <h3>Race registration</h3>
+            <p>
+              Registration and race details are handled by Salem Sound Coastwatch. The race happens
+              rain or shine.
+            </p>
+          </article>
+        </div>
+
+        <aside class="invite">
+          <div>
+            <h2>See you Sunday.</h2>
+            <p>Come for the run, the cheering, the snacks, or all three.</p>
+          </div>
+          <a class="button" href="https://salemsound.org/5krace/" target="_blank" rel="noreferrer">
+            Race details + registration ↗
+          </a>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="shell">
+      An unofficial neighborhood meetup with
+      <a class="club-credit" href="https://metersforliters.com/" target="_blank" rel="noreferrer">Notch Run Club</a>
+      for the
+      <a href="https://salemsound.org/5krace/" target="_blank" rel="noreferrer">Run for the Beach 5K</a>,
+      hosted by Salem Sound Coastwatch.
+    </footer>
+  </body>
+</html>
